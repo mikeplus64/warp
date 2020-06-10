@@ -606,6 +606,12 @@ mod internal {
     pub trait IntoOrigin {
         fn into_origin(self) -> Origin;
     }
+    
+    impl IntoOrigin for Origin {
+        fn into_origin(self) -> Origin {
+            self
+        }
+    }
 
     impl<'a> IntoOrigin for &'a str {
         fn into_origin(self) -> Origin {
